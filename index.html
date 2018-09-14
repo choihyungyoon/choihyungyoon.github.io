@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="css/toystory.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+
+  <script>
+    $(function(){
+      $('nav a').click(function(e){
+        e.preventDefault();
+        var id=$(this).attr('href');
+        $('nav a').removeClass('on');
+        $(this).addClass('on');
+        $('html').animate({
+          scrollTop:$(id).offset().top
+        },1000);
+      })
+
+      var wh=$(window).height();
+      $(window).on('scroll',function(){
+        var scroll=$(window).scrollTop();
+        var about=$('#about').offset().top;
+        if(scroll >= about){
+          $('header').addClass('fixed');
+        }else{
+          $('header').removeClass('fixed');
+        }
+        for (var i = 1; i <= 4; i++) {
+          if (scroll>=(i)*wh && scroll<=(i+1)*wh){
+            articleIndex=i;
+            $('nav a').removeClass();
+            $('nav a').eq(i-1).addClass('on');
+          }
+        }
+      })
+      $(window).trigger('scroll');
+    })
+  </script>
+</head>
+<body>
+  <section class="intro">
+    <div class="bg"></div>
+    <a href="#" class="center"><img src="img/logo1.png" alt="logo" title="toystory"/></a>
+  </section>
+
+  <header class="fixed">
+    <nav>
+     <ul>
+       <li><a href="#about">토이스토리 소개</a></li>
+       <li><a href="#story">줄거리</a></li>
+       <li><a href="#character">캐릭터 소개</a></li>
+       <li><a href="#video">영상(미리보기)</a></li>
+     </ul>
+    </nav>
+  </header>
+
+  <section class="about" id="about">
+    <div class="left">
+      <div class="center">
+        <img src="img/Woody(hello).png" alt="">
+        <p>위대한 3D 애니메이션 시리즈와 3D 애니메이션의 시작을 알린 기념비적인 작품.<br>2007년 미국 영화 연구소(AFI) 100대 영화 99위 선정.</p>
+      </div>
+    </div>
+    <div class="right">
+      <table class="center">
+        <tr>
+          <th>감독</th>
+          <td>존 라세터</td>
+        </tr>
+        <tr>
+          <th>제작</th>
+          <td>보니 아놀드, 랄프 구겐하임</td>
+        </tr>
+        <tr>
+          <th>각본</th>
+          <td>조스 웨던, 앤드류 스탠턴 외</td>
+        </tr>
+        <tr>
+          <th>출연</th>
+          <td>톰 행크스, 피트 닥터 외</td>
+        </tr>
+        <tr>
+          <th>음악</th>
+          <td>랜디 뉴먼</td>
+        </tr>
+        <tr>
+          <th>장르</th>
+          <td>애니메이션,코미디,판타지</td>
+        </tr>
+        <tr>
+          <th>개봉일</th>
+          <td>
+            <ul>
+              <li>1995년11월19일(USA)</li>
+              <li>1995년12월23일(Korea)</li>
+              <li>2009년10월2일(USA)</li>
+              <li>2010년5월5일(Korea)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>상영시간</th>
+          <td>81분</td>
+        </tr>
+        <tr>
+          <th>제작사</th>
+          <td>
+            <ul>
+              <li>월드 디즈니 픽처스(USA)</li>
+              <li>픽사 애니메이션 스튜디오(USA)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>수입사</th>
+          <td>월드 디즈니 캠퍼니 코리아(Korea)</td>
+        </tr>
+        <tr>
+          <th>배급사</th>
+          <td>
+            <ul>
+              <li>브에나 비스타 픽처스(USA)</li>
+              <li>월트 디즈니 캠퍼니 코리아(Korea)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>제작비</th>
+          <td>$30,000,000</td>
+        </tr>
+        <tr>
+          <th>북미 박스오피스</th>
+          <td>$191,796,233</td>
+        </tr>
+        <tr>
+          <th>월드 박스오피스</th>
+          <td>$373,554,003</td>
+        </tr>
+        <tr>
+          <th>서울 총 관객수</th>
+          <td>317,994명</td>
+        </tr>
+        <tr>
+          <th>국내 등급</th>
+          <td>연소자 관람</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <h2>Story</h2>
+    <div class="wrap">
+      <p>카우보이 인형 우디는 앤디가 가장 아끼고 사랑하는 장난감이다. 그는 앤디의 수많은 장남감들의 리더 역할을 맡으면서 그들을 날마다 이끌고 진두지휘하며 모든 장난감들 역시 그를 따른다. 그러던 어느날 앤디의 생일파티가 열리고 앤디는 버즈 라이트이어라는 새로운 신제품 장난감을 선물로 받는다. 버즈는 우주를 수호하며 평화를 지키는 우주특공대원 전사 장난감으로 최첨단 장비들과 수납식 날개, 개폐식 헬멧, 디지털 녹음된 음성 지원, 레이저 발사 등을 가지고 있다. 앤디가 가장 좋아하는 장난감 1위는 순식간에 우디에서 버즈로 바뀌게 되고, 다른 장난감들도 우디보다 버즈를 더 따르게 되며 우디는 하루아침에 2인자로 전락한다. 우디는 자신의 자리였던 앤디가 최고로 아끼는 장난감 1인자 자리와 모든 장난감들의 대장자리를 모두 빼앗아 버린 버즈를 시기하고 질투하며 자신이 진짜 우주전사라고 믿는 버즈에게 넌 그냥 장난감일 뿐이라며 면박을준다. 앤디네 가족이 이사를 가기 이틀 전 우디는 버즈를 밀쳐내 버리고 자신이 앤디와 함께 피자혹성에 가려다가 버즈와 함께 옆집에 장난감들을 마구 고문하여 작살내 버리거나 폭파시켜 버리는 나쁜꼬마 시드에게 납치되어 장난감의 지옥과도 같은 그의 집에 갇혀버리고 마는데........</p>
+    </div>
+  </section>
+
+  <section class="character" id="character">
+    <h2>Character</h2>
+    <div class="list">
+      <div class="wrap">
+        <a href="#">
+          <span class="img-box">
+            <img src="img/woody.png" alt="">
+          </span>
+          <span class="text-box">
+  				 	<dl class="center">
+               <dt>우디</dt>
+               <dd>앤디의 오랜 장난감 친구.</dd>
+             </dl>
+  				</span>
+        </a>
+      </div>
+
+      <div class="wrap">
+        <a href="#">
+          <span class="img-box">
+            <img src="img/Bezz.png" alt="">
+          </span>
+          <span class="text-box">
+            <dl class="center">
+              <dt>버즈라이트 이어</dt>
+              <dd>앤디의 생일 선물로 온 버즈라이트이어 우주전사 장난감.</dd>
+            </dl>
+          </span>
+        </a>
+      </div>
+
+      <div class="wrap">
+        <a href="#">
+          <span class="img-box">
+            <img src="img/Rex.jpg" alt="">
+          </span>
+          <span class="text-box">
+            <dl class="center">
+              <dt>렉스</dt>
+              <dd>머리가 나쁘고,마음 여린 순수한 티라노사우르스 공룡이다.</dd>
+            </dl>
+          </span>
+        </a>
+      </div>
+
+      <div class="wrap">
+        <a href="#">
+          <span class="img-box">
+            <img src="img/woody gril.jpg" alt="">
+          </span>
+          <span class="text-box">
+            <dl class="center">
+              <dt>제시</dt>
+              <dd>주인공우디의 여자친구.</dd>
+            </dl>
+          </span>
+        </a>
+      </div>
+
+      <div class="wrap">
+        <a href="#">
+          <span class="img-box">
+            <img src="img/doge.jpg" alt="">
+          </span>
+          <span class="text-box">
+            <dl class="center">
+              <dt>슬링키 독</dt>
+              <dd>몸과 엉덩이가 스프링으로 연결되있고,우디의 오른팔처럼 철썩같이 우디를 따른다.</dd>
+            </dl>
+          </span>
+        </a>
+      </div>
+
+      <div class="wrap">
+        <a href="#">
+          <span class="img-box">
+            <img src="img/Ham.jpg" alt="">
+          </span>
+          <span class="text-box">
+            <dl class="center">
+              <dt>햄</dt>
+              <dd>돼지 저금통이며, 놀이에서는 주로 악당역을 맞는 장난감.</dd>
+            </dl>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="video" id="video">
+    <iframe src="https://www.youtube.com/embed/V4hfq-Hrew0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </section>
+
+</body>
+</html>
